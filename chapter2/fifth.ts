@@ -1,23 +1,23 @@
 const fifth = () => {
     interface ReadOnly {
-        readonly a: string
-        b: string
+        readonly a: string;
+        b: string;
     }
 
     // indexed signiture
-    type Str = { [key: string]: string } // 어떤 키든 간에 키 네임이 string, 값도 string이었으면 좋겠다.
+    type Str = { [key: string]: string }; // 어떤 키든 간에 키 네임이 string, 값도 string이었으면 좋겠다.
 
     // mapped types
-    type Life = 'Human' | 'Mammal' | 'Animal' // interface론 and, or 안됨
-    type LifeObject = { [key in Life]: number }
-    const aaaa: LifeObject = { Human: 1, Mammal: 2, Animal: 3 }
+    type Life = 'Human' | 'Mammal' | 'Animal'; // interface론 and, or 안됨
+    type LifeObject = { [key in Life]: number };
+    const aaaa: LifeObject = { Human: 1, Mammal: 2, Animal: 3 };
 
     class Example {
-        a: string
-        b: number
+        a: string;
+        b: number;
         constructor(a: string, b: number = 123) {
-            this.a = a
-            this.b = b
+            this.a = a;
+            this.b = b;
         }
 
         method() {}
@@ -42,24 +42,24 @@ const fifth = () => {
 
     // * 이렇게 구현해야 에러 안남
     interface A {
-        c: string
+        c: string;
     }
 
     class B {
-        private a: string = '123' // 타입스크립트의 private - 추천
-        protected b: string = '234'
-        #c: number = 123 // 자바스크립트의 private
+        private a: string = '123'; // 타입스크립트의 private - 추천
+        protected b: string = '234';
+        #c: number = 123; // 자바스크립트의 private
     }
 
     class C implements A {
-        private a: string = '123'
-        protected b: string = 'world'
-        c: string = 'wow'
+        private a: string = '123';
+        protected b: string = 'world';
+        c: string = 'wow';
 
         method() {
-            console.log(this.a)
-            console.log(this.b)
-            console.log(this.c)
+            console.log(this.a);
+            console.log(this.b);
+            console.log(this.c);
         }
     }
 
@@ -76,22 +76,22 @@ const fifth = () => {
 
     // interface 대신 abstract class 쓰는게 더 나음
     abstract class Abstract {
-        private a: string = '123'
-        protected b: string = 'world'
-        c: string = 'wow'
+        private a: string = '123';
+        protected b: string = 'world';
+        c: string = 'wow';
 
         method() {
-            console.log(this.a)
-            console.log(this.b)
-            console.log(this.c)
+            console.log(this.a);
+            console.log(this.b);
+            console.log(this.c);
         }
-        abstract method2(): void
+        abstract method2(): void;
     }
 
     // abstract로 되어 있는 건 상속받았을 때 반드시 구현을 해야 한다.
     class E extends Abstract {
         method2() {
-            console.log('must implement')
+            console.log('must implement');
         }
     }
-}
+};
