@@ -32,8 +32,10 @@ const ch3First = () => {
 
     // type이 string | number[]로 나온다.
     const filtered2 = ['1', 2, '3', 4, '5'].filter(value => typeof value === 'string'); // ['1','3','5']
+
     // type이 string[]으로 제대로 추론
     const filtered3 = ['1', 2, '3', 4, '5'].filter((value): value is string => typeof value === 'string');
+
     // predicate 부분이 커스텀 타입 가드(A is B)가 아니여서 안된다.
     // const filtered4 = ['1', 2, '3', 4, '5'].filter<string>(value => typeof value === 'string');
 };
