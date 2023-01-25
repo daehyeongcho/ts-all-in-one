@@ -1,4 +1,4 @@
-const ch3First = () => {
+const sec2First = () => {
     interface Array<T> {
         forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
         // S는 T의 부분집합

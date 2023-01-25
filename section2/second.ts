@@ -1,4 +1,4 @@
-const ch3Second = () => {
+const sec2Second = () => {
     interface Arr<T> {
         // 우리가 만들어낸 타입
         forEach(callback: (item: T) => void): void;
